@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Automated TCs_Hend Gomaa</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User Managment-Login-TC#1(Invalid login)</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://opensource-demo.orangehrmlive.com<datalist><option>https://opensource-demo.orangehrmlive.com/index.php/auth/login</option><option>https://opensource-demo.orangehrmlive.com</option></datalist></td><td></td>
+</tr>
+<tr><td>verifyTextPresent</td><td><datalist><option></option></datalist></td><td>LOGIN Panel</td>
+</tr>
+<tr><td>type</td><td>id=txtUsername<datalist><option>id=txtUsername</option><option>name=txtUsername</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='LOGIN Panel'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='( Username : Admin | Password : admin123 )'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/preceding::input[2]</option><option>//input[@id='txtUsername']</option><option>//div[@id='divUsername']/input</option><option>//div[2]/input</option><option>css=#txtUsername</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>type</td><td>id=txtPassword<datalist><option>id=txtPassword</option><option>name=txtPassword</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='LOGIN Panel'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/preceding::input[1]</option><option>//input[@id='txtPassword']</option><option>//div[@id='divPassword']/input</option><option>//div[3]/input</option><option>css=#txtPassword</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>click</td><td>id=btnLogin<datalist><option>id=btnLogin</option><option>name=Submit</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::input[2]</option><option>//input[@id='btnLogin']</option><option>//div[@id='divLoginButton']/input</option><option>//div[5]/input</option><option>css=#btnLogin</option></datalist></td><td></td>
+</tr>
+<tr><td>verifyTextPresent</td><td><datalist><option>id=spanMessage</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/following::span[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::span[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OrangeHRM, Inc'])[1]/preceding::span[1]</option><option>//span[@id='spanMessage']</option><option>//div[@id='divLoginButton']/span</option><option>//div[5]/span</option><option>css=#spanMessage</option><option></option></datalist></td><td>Invalid credentials</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User Managment-Login-TC# 2(Valid login)</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://opensource-demo.orangehrmlive.com<datalist><option>awds</option><option>https://opensource-demo.orangehrmlive.com</option></datalist></td><td></td>
+</tr>
+<tr><td>verifyTextPresent</td><td><datalist><option></option></datalist></td><td>LOGIN Panel</td>
+</tr>
+<tr><td>type</td><td>id=txtUsername<datalist><option>id=txtUsername</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>type</td><td>id=txtPassword<datalist><option>id=txtPassword</option></datalist></td><td>admin123</td>
+</tr>
+<tr><td>click</td><td>id=btnLogin<datalist><option>id=btnLogin</option></datalist></td><td></td>
+</tr>
+<tr><td>verifyTextPresent</td><td><datalist><option></option></datalist></td><td>"Welcome Admin"</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User Management-Logout-TC# 3</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://opensource-demo.orangehrmlive.com/index.php/dashboard<datalist><option>https://opensource-demo.orangehrmlive.com/index.php/dashboard</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=welcome<datalist><option>id=welcome</option><option>link=Welcome Admin</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='×'])[1]/preceding::a[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='About'])[2]/preceding::a[3]</option><option>//a[contains(text(),'Welcome Admin')]</option><option>//a[@id='welcome']</option><option>//div[@id='branding']/a[2]</option><option>//a[contains(@href, '#')]</option><option>//a[2]</option><option>css=#welcome</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Logout<datalist><option>link=Logout</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='About'])[2]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='×'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='×'])[2]/preceding::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Confirm Toggl Sync'])[1]/preceding::a[2]</option><option>//a[contains(text(),'Logout')]</option><option>//div[@id='welcome-menu']/ul/li[2]/a</option><option>//a[contains(@href, '/index.php/auth/logout')]</option><option>//li[2]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>verifyTextPresent</td><td><datalist><option></option></datalist></td><td>"( Username : Admin | Password : admin123 )"</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User Management-Search-TC# 4(Reset Button)</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://opensource-demo.orangehrmlive.com/index.php/admin/viewSystemUsers<datalist><option>https://opensource-demo.orangehrmlive.com/index.php/admin/viewSystemUsers</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=searchSystemUser_userName<datalist><option>id=searchSystemUser_userName</option><option>name=searchSystemUser[userName]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='System Users'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/preceding::input[1]</option><option>//input[@id='searchSystemUser_userName']</option><option>//form[@id='search_form']/fieldset/ol/li/input</option><option>//li/input</option><option>css=#searchSystemUser_userName</option></datalist></td><td>testtest</td>
+</tr>
+<tr><td>click</td><td>id=searchSystemUser_userType<datalist><option>id=searchSystemUser_userType</option><option>name=searchSystemUser[userType]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/preceding::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/preceding::select[1]</option><option>//select[@id='searchSystemUser_userType']</option><option>//form[@id='search_form']/fieldset/ol/li[2]/select</option><option>//select</option><option>css=#searchSystemUser_userType</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>id=searchSystemUser_userType<datalist><option>id=searchSystemUser_userType</option><option>name=searchSystemUser[userType]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/preceding::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/preceding::select[1]</option><option>//select[@id='searchSystemUser_userType']</option><option>//form[@id='search_form']/fieldset/ol/li[2]/select</option><option>//select</option><option>css=#searchSystemUser_userType</option></datalist></td><td>label=Admin</td>
+</tr>
+<tr><td>type</td><td>id=searchSystemUser_employeeName_empName<datalist><option>id=searchSystemUser_employeeName_empName</option></datalist></td><td>xyz</td>
+</tr>
+<tr><td>click</td><td>id=searchSystemUser_status<datalist><option>id=searchSystemUser_status</option><option>name=searchSystemUser[status]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[2]/preceding::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[2]/preceding::select[1]</option><option>//select[@id='searchSystemUser_status']</option><option>//form[@id='search_form']/fieldset/ol/li[4]/select</option><option>//li[4]/select</option><option>css=#searchSystemUser_status</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>id=searchSystemUser_status<datalist><option>id=searchSystemUser_status</option><option>name=searchSystemUser[status]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[2]/preceding::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[2]/preceding::select[1]</option><option>//select[@id='searchSystemUser_status']</option><option>//form[@id='search_form']/fieldset/ol/li[4]/select</option><option>//li[4]/select</option><option>css=#searchSystemUser_status</option></datalist></td><td>label=Enabled</td>
+</tr>
+<tr><td>click</td><td>id=resetBtn<datalist><option>id=resetBtn</option><option>name=_reset</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/following::input[5]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/following::input[7]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[2]/preceding::input[5]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[2]/preceding::input[5]</option><option>//input[@id='resetBtn']</option><option>//form[@id='search_form']/fieldset/p/input[2]</option><option>//p/input[2]</option><option>css=#resetBtn</option></datalist></td><td></td>
+</tr>
+<tr><td>verifyText</td><td>id=searchSystemUser_userName<datalist><option>id=searchSystemUser_userName</option></datalist></td><td></td>
+</tr>
+<tr><td>verifyText</td><td>id=searchSystemUser_employeeName_empName<datalist><option>id=searchSystemUser_employeeName_empName</option></datalist></td><td></td>
+</tr>
+<tr><td>verifySelectedLabel</td><td>id=searchSystemUser_status<datalist><option>id=searchSystemUser_employeeName_empName</option><option>name=searchSystemUser[employeeName][empName]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/preceding::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[2]/preceding::input[11]</option><option>//input[@id='searchSystemUser_employeeName_empName']</option><option>//form[@id='search_form']/fieldset/ol/li[3]/input</option><option>//li[3]/input</option><option>css=#searchSystemUser_employeeName_empName</option><option>id=searchSystemUser_status</option></datalist></td><td>All</td>
+</tr>
+<tr><td>verifySelectedLabel</td><td>id=searchSystemUser_userType<datalist><option>id=searchSystemUser_userType</option></datalist></td><td>All</td>
+</tr>
+<tr><td></td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td></td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td></td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td></td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td></td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User Management-Search-TC# 5(Search Button)</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://opensource-demo.orangehrmlive.com/index.php/dashboard<datalist><option>https://opensource-demo.orangehrmlive.com/index.php/dashboard</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=menu_admin_viewSystemUsers<datalist><option>id=menu_admin_viewSystemUsers</option><option>link=Users</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Admin'])[1]/following::a[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Confirm Toggl Sync'])[1]/following::a[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Job Titles'])[1]/preceding::a[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Pay Grades'])[1]/preceding::a[3]</option><option>//a[contains(text(),'Users')]</option><option>//a[@id='menu_admin_viewSystemUsers']</option><option>//div[@id='wrapper']/div[2]/ul/li/ul/li/ul/li/a</option><option>//a[contains(@href, '/index.php/admin/viewSystemUsers')]</option><option>//li/ul/li/ul/li/a</option><option>css=#menu_admin_viewSystemUsers</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=searchSystemUser_userName<datalist><option>id=searchSystemUser_userName</option><option>name=searchSystemUser[userName]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='System Users'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/preceding::input[1]</option><option>//input[@id='searchSystemUser_userName']</option><option>//form[@id='search_form']/fieldset/ol/li/input</option><option>//li/input</option><option>css=#searchSystemUser_userName</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=searchSystemUser_userName<datalist><option>id=searchSystemUser_userName</option><option>name=searchSystemUser[userName]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='System Users'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/preceding::input[1]</option><option>//input[@id='searchSystemUser_userName']</option><option>//form[@id='search_form']/fieldset/ol/li/input</option><option>//li/input</option><option>css=#searchSystemUser_userName</option></datalist></td><td>admin</td>
+</tr>
+<tr><td>click</td><td>id=searchSystemUser_status<datalist><option>id=searchSystemUser_status</option><option>name=searchSystemUser[status]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[2]/preceding::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[2]/preceding::select[1]</option><option>//select[@id='searchSystemUser_status']</option><option>//form[@id='search_form']/fieldset/ol/li[4]/select</option><option>//li[4]/select</option><option>css=#searchSystemUser_status</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>id=searchSystemUser_status<datalist><option>id=searchSystemUser_status</option><option>name=searchSystemUser[status]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/following::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[2]/preceding::select[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[2]/preceding::select[1]</option><option>//select[@id='searchSystemUser_status']</option><option>//form[@id='search_form']/fieldset/ol/li[4]/select</option><option>//li[4]/select</option><option>css=#searchSystemUser_status</option></datalist></td><td>label=Enabled</td>
+</tr>
+<tr><td>click</td><td>id=searchBtn<datalist><option>id=searchBtn</option><option>name=_search</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Employee Name'])[1]/following::input[6]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Username'])[2]/preceding::input[6]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Role'])[2]/preceding::input[6]</option><option>//input[@id='searchBtn']</option><option>//form[@id='search_form']/fieldset/p/input</option><option>//p/input</option><option>css=#searchBtn</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
